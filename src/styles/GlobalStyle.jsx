@@ -193,7 +193,7 @@ components/ ProblemItem
       overflow: hidden;
     }
     button {
-      color: red;
+      
       margin-left: 8px;
     }
   }
@@ -241,7 +241,7 @@ components/ ProblemsList
     margin-bottom: 8px;
   }
   .my-masonry-grid_column > div:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 }
 `;
