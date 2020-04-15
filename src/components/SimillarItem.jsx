@@ -3,8 +3,8 @@ import styled from 'styled-components';
 // import { useParams } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 
-const StyledItem = styled.div`
-  background-color: #fff;
+const StyledSimillarItem = styled.div`
+  background: #fff;
   .problemText {
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ const StyledItem = styled.div`
     }
     button {
       color: red;
-      margin-right: 8px;
+      margin-left: 8px;
     }
   }
   .problemImg {
@@ -32,24 +32,34 @@ const StyledItem = styled.div`
     b {
       margin-right: 37px;
     }
+    img {
+      width: 34vw;
+    }
+  }
+  @media (max-width: 900px) {
+    .problemImg {
+      img {
+        width: 305px;
+      }
+    }
   }
 `;
 
-function Item() {
+function SimillarItem() {
   // const params = useParams();
   // const commentsId = useSelector((state) => state.comments[params.id]);
   // const comments = commentsId && commentsId.comments;
 
   return (
-    <StyledItem>
+    <StyledSimillarItem>
       <div className='problemText'>
         <em className='problemType'>객관식</em>
         <p className='unitName'>집합의 표현방법 집합의 표현방법 집합의 표현방법 집합의...</p>
         <button>
-          <a href='#'>유사문항</a>
+          <a href='#'>추가</a>
         </button>
         <button>
-          <a href='#'>삭제</a>
+          <a href='#'>교체</a>
         </button>
       </div>
 
@@ -61,7 +71,7 @@ function Item() {
           alt='문제 이미지'
         ></img>
       </div>
-    </StyledItem>
+    </StyledSimillarItem>
   );
 }
-export default Item;
+export default SimillarItem;

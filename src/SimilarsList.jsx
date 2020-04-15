@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Problems from './components/Problems';
+import SimillarItem from './components/SimillarItem';
 import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
 
@@ -16,8 +16,6 @@ const StyledSimilarsList = styled.main`
   }
 
   .my-masonry-grid_column > div {
-    /* change div to reference your elements you put in <Masonry> */
-    background: none;
     margin-bottom: 8px;
   }
 `;
@@ -33,12 +31,9 @@ function SimilarsList() {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />{' '}
+        <SimillarItem />
+        <SimillarItem />
+
         {/* {Object.keys(feeds)
           .reverse()
           .map((key) => {

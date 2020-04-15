@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Problems from './components/Problems';
+import ProblemItem from './components/ProblemItem';
 import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
 
 const StyledProblemsList = styled.main`
   width: 49.8%;
   border-right: 2px solid #e0e0e0;
-  /* background-color: #fff; */
 
   .my-masonry-grid {
     display: flex;
@@ -18,8 +17,6 @@ const StyledProblemsList = styled.main`
   }
 
   .my-masonry-grid_column > div {
-    /* change div to reference your elements you put in <Masonry> */
-    background: none;
     margin-bottom: 8px;
   }
 `;
@@ -35,12 +32,12 @@ function ProblemsList() {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />
-        <Problems />
+        <ProblemItem />
+        <ProblemItem />
+        <ProblemItem />
+        <ProblemItem />
+        <ProblemItem />
+
         {/* {Object.keys(feeds)
           .reverse()
           .map((key) => {
