@@ -1,31 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { useParams } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const StyledProblemItem = styled.div``;
 
-function ProblemItem() {
+const ToggleButton = styled.button`
+  background: ${(props) => (props.isSelected ? '#00ABFF' : '#FFFFFF')};
+  color: ${(props) => (props.isSelected ? '#FFFFFF' : '#00ABFF')};
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+function ProblemItem(props) {
+  const dispatch = useDispatch();
+
+  const toggleHandler = () => {
+    dispatch({ type: 'SET_ACTIVE_ITEM', payload: { id: props.id } });
+  };
+  console.log(props.isActive);
+
   return (
     <StyledProblemItem className='item'>
       <div className='problemText'>
-        <em className='problemType'>객관식</em>
-        <p className='unitName'>집합의 표현방법 집합의 표현방법 집합의 표현방법 집합의...</p>
-        <button>
-          <a href='#'>유사문항</a>
-        </button>
-        <button>
-          <a href='#'>삭제</a>
-        </button>
+        <em className='problemType'>{props.problemType}</em>
+        <p className='unitName'>{props.unitName}</p>
+        <ToggleButton onClick={toggleHandler} isSelected={props.isActive}>
+          유사문항
+        </ToggleButton>
+        <ToggleButton>삭제</ToggleButton>
       </div>
 
       <div className='problemImg'>
         <b>1</b>
-        <img
-          className='probleImg'
-          src='https://s3.ap-northeast-2.amazonaws.com/mathflat/math_problems/d/9/h/1/1/239/9_311239_eT9Em_27_p.png'
-          alt='문제 이미지'
-        ></img>
+        <img className='probleImg' src={props.problemURL} alt='문제 이미지'></img>
       </div>
     </StyledProblemItem>
   );

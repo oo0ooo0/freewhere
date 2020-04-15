@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ProblemItem from './components/ProblemItem';
 import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
-
+import { useDispatch } from 'react-redux';
+import { getProblems } from './services/problems/actions';
+import { useSelector } from 'react-redux';
 const StyledProblemsList = styled.main`
   width: 49.8%;
   border-right: 2px solid #e0e0e0;
@@ -22,9 +24,15 @@ const StyledProblemsList = styled.main`
 `;
 
 function ProblemsList() {
-  // const feeds = useSelector((state) => state.feeds);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProblems());
+  }, []);
+
+  const problems = useSelector((state) => state.problems.items);
+
   return (
-    <StyledProblemsList>
+    <StyledProblemsList className='list'>
       <TitleContainer> 학습지 상세설명</TitleContainer>
 
       <Masonry
@@ -32,17 +40,10 @@ function ProblemsList() {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        <ProblemItem />
-        <ProblemItem />
-        <ProblemItem />
-        <ProblemItem />
-        <ProblemItem />
-
-        {/* {Object.keys(feeds)
-          .reverse()
-          .map((key) => {
-            return <Item key={key} {...feeds[key]} />;
-          })} */}
+        {problems &&
+          problems.map((problem) => {
+            return <ProblemItem key={problem.id} {...problem} />;
+          })}
       </Masonry>
     </StyledProblemsList>
   );
