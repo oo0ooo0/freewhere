@@ -3,52 +3,11 @@ import styled from 'styled-components';
 // import { useParams } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 
-const StyledProblemItem = styled.div`
-  background-color: #fff;
-
-  .problemText {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px 6px 37px;
-    .problemType {
-      margin-right: 18px;
-      white-space: nowrap;
-    }
-    .unitName {
-      display: inline-block;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    button {
-      color: red;
-      margin-left: 8px;
-    }
-  }
-  .problemImg {
-    display: flex;
-    align-items: flex-start;
-    margin-left: 47px;
-    padding: 17px 0px 23px 0px;
-    b {
-      margin-right: 37px;
-    }
-    img {
-      width: 34vw;
-    }
-  }
-  @media (max-width: 900px) {
-    .problemImg {
-      img {
-        width: 305px;
-      }
-    }
-  }
-`;
+const StyledProblemItem = styled.div``;
 
 function ProblemItem() {
   return (
-    <StyledProblemItem>
+    <StyledProblemItem className='item'>
       <div className='problemText'>
         <em className='problemType'>객관식</em>
         <p className='unitName'>집합의 표현방법 집합의 표현방법 집합의 표현방법 집합의...</p>

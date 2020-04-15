@@ -67,9 +67,9 @@ h2 {
 }
 
 h3 {
-  font: normal 500 14px/42px 'Noto Sans KR';
-  color: #1d1e21;
-}
+  font: normal normal 14px/20px 'Noto Sans KR';
+  color: #4C4C4C;
+  }
 
 h4 {
   font: normal 900 24px/34px 'Noto Sans KR';
@@ -167,50 +167,82 @@ button {
 }
 
  
-/* margin, padding */
-.mt10 {
-  margin-top: 10px !important;
+
+/* 
+Item common style
+components/ SimillarItem
+components/ ProblemItem
+*/
+.item{
+  background-color: #fff;
+
+  .problemText {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 6px 37px;
+    border-bottom: 1px solid #F5F5F5;
+
+    .problemType {
+      margin-right: 18px;
+      white-space: nowrap;
+    }
+    .unitName {
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    button {
+      color: red;
+      margin-left: 8px;
+    }
+  }
+  .problemImg {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 47px;
+    padding: 17px 0px 23px 0px;
+    b {
+      margin-right: 37px;
+    }
+    img {
+      width: 34vw;
+    }
+  }
+  @media (max-width: 900px) {
+    .problemImg {
+      img {
+        width: 305px;
+      }
+    }
+  }
 }
 
-.mt15 {
-  margin-top: 15px !important;
-}
 
-.mt20 {
-  margin-top: 20px !important;
-}
 
-.mt25 {
-  margin-top: 25px !important;
-}
 
-.mt30 {
-  margin-top: 30px !important;
-}
+/* 
+List common style
+components/ SimillarsList
+components/ ProblemsList
+*/
+.list{
+  width: 49.8%;
 
-.mt35 {
-  margin-top: 35px !important;
-}
+  .my-masonry-grid {
+    display: flex;
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    background-clip: padding-box;
+  }
 
-.mt40 {
-  margin-top: 40px !important;
-}
-
-.mt45 {
-  margin-top: 45px !important;
-}
-
-.mt50 {
-  margin-top: 50px !important;
-}
-
-/* clearfix */
-.clearfix,
-.clearfix::after,
-.clearfix::before {
-  content: '';
-  clear: both;
-  display: block;
+  .my-masonry-grid_column > div {
+    margin-bottom: 8px;
+  }
+  .my-masonry-grid_column > div:last-child {
+    margin-bottom: 0px;
+  }
 }
 `;
 
