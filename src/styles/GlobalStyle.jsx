@@ -117,9 +117,23 @@ button {
   background: #fff;
   cursor: pointer;
   display: inline-block;
+  transition: all 0.3s ease; 
   a{
      color: #00ABFF;
   }
+  }
+
+  button:hover {
+  border: 1px solid #00ABFF;  
+  }
+
+  button:active {
+    background: #00ABFF;
+    border: 1px solid #E0E0E0;
+    a{
+     color: #fff;
+  }
+
   }
 
 
