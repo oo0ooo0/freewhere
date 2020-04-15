@@ -3,17 +3,19 @@ import ProblemsList from './ProblemsList';
 import SimilarsList from './SimilarsList';
 import GlobalStyle from './styles/GlobalStyle';
 import { LayoutContainer } from './components/Containers';
+import { Provider } from 'react-redux';
+import store from './services/store';
 
 function App() {
   return (
-    <div className='App'>
+    <Provider store={store}>
       <GlobalStyle />
 
       <LayoutContainer>
         <ProblemsList />
         <SimilarsList />
       </LayoutContainer>
-    </div>
+    </Provider>
   );
 }
 

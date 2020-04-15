@@ -1,0 +1,2 @@
+export const SIMILLAR_CLICK = 'SIMILLAR_CLICK';
+export const DELETE_CLICK = 'DELETE_CLICK';
