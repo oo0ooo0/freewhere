@@ -1,33 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { ToggleButton } from './Button';
 
 const StyledProblemItem = styled.div``;
-
-const ToggleButton = styled.button`
-  background: ${(props) => (props.isSelected ? '#00ABFF' : '#FFFFFF')};
-  color: ${(props) => (props.isSelected ? '#FFFFFF' : '#00ABFF')};
-  font-size: 14px;
-  font-weight: bold;
-`;
 
 function ProblemItem(props) {
   const dispatch = useDispatch();
 
   const toggleHandler = () => {
-    dispatch({ type: 'SET_ACTIVE_ITEM', payload: { id: props.id } });
+    dispatch({ type: 'SET_ACTIVE_ITEM', payload: { id: props.isSelected ? null : props.id } });
   };
-  console.log(props.isActive);
-
+  const handleDelete = () => {
+    dispatch({ type: 'DELETE_PROBLEM', payload: { id: props.id } });
+  };
   return (
     <StyledProblemItem className='item'>
       <div className='problemText'>
         <em className='problemType'>{props.problemType}</em>
         <p className='unitName'>{props.unitName}</p>
-        <ToggleButton onClick={toggleHandler} isSelected={props.isActive}>
+        <ToggleButton onClick={toggleHandler} isSelected={props.isSelected}>
           유사문항
         </ToggleButton>
-        <ToggleButton>삭제</ToggleButton>
+        <ToggleButton onClick={handleDelete}>삭제</ToggleButton>
       </div>
 
       <div className='problemImg'>
@@ -37,4 +32,4 @@ function ProblemItem(props) {
     </StyledProblemItem>
   );
 }
-export default ProblemItem;
+export default React.memo(ProblemItem);

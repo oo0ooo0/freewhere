@@ -26,23 +26,28 @@ function SimilarsList() {
     dispatch(getSimilars());
   }, []);
 
-  const similars = useSelector((state) => state.similars.items);
+  const { problems, similars } = useSelector((state) => state);
 
   return (
     <StyledSimilarsList className='list'>
       <TitleContainer align={'center'}>문항 교체/추가</TitleContainer>
-      <Clickmessage />
+      {problems.selectedId ? (
+        <Masonry
+          breakpointCols={1}
+          className='my-masonry-grid'
+          columnClassName='my-masonry-grid_column'
+        >
+          {similars.items.map((similar) => {
+            return <SimilarItem key={similar.id} {...similar} />;
+          })}
+        </Masonry>
+      ) : (
+        <Clickmessage />
+      )}
+
       {/* 
       <h3>문제유형을 잘 넣기</h3>
-      <Masonry
-        breakpointCols={1}
-        className='my-masonry-grid'
-        columnClassName='my-masonry-grid_column'
-      >
-        {similars.map((similar) => {
-          return <SimilarItem key={similar.id} {...similar} />;
-        })}
-      </Masonry> */}
+       */}
     </StyledSimilarsList>
   );
 }

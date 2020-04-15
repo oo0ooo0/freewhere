@@ -29,8 +29,7 @@ function ProblemsList() {
     dispatch(getProblems());
   }, []);
 
-  const problems = useSelector((state) => state.problems.items);
-
+  const { items, selectedId } = useSelector((state) => state.problems);
   return (
     <StyledProblemsList className='list'>
       <TitleContainer> 학습지 상세설명</TitleContainer>
@@ -40,10 +39,9 @@ function ProblemsList() {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        {problems &&
-          problems.map((problem) => {
-            return <ProblemItem key={problem.id} {...problem} />;
-          })}
+        {items.map((item) => (
+          <ProblemItem {...item} key={item.id} isSelected={selectedId === parseInt(item.id, 10)} />
+        ))}
       </Masonry>
     </StyledProblemsList>
   );
