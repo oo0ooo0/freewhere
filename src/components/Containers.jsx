@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
+  min-width: 900px;
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -12,7 +13,6 @@ export const TitleContainer = styled.h2`
   width: 100%;
   padding: 13px 24px;
   align-items: center;
-  position: relative;
   text-align: ${(props) => props.align || 'left'};
   margin-bottom: 3px;
   background-color: #fff;
