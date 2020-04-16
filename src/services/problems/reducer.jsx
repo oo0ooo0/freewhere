@@ -33,7 +33,7 @@ export function problemReducer(state = initialState, action) {
     }
     case ADD_PROBLEM: {
       const { payload } = action;
-      const index = state.items.findIndex((item) => item.id == state.selectedId);
+      const index = state.items.findIndex((item) => item.id === state.selectedId);
       const copied = state.items;
       copied.splice(index + 1, 0, payload);
       return {

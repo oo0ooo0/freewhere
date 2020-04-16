@@ -29,7 +29,7 @@ function ProblemsList() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProblems());
-  }, []);
+  }, [dispatch]);
 
   const { items, selectedId } = useSelector((state) => state.problems);
   return (

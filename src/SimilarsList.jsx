@@ -6,7 +6,7 @@ import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSimilars } from './services/similars/actions';
-import { getProblems } from './services/problems/actions';
+// import { getProblems } from './services/problems/actions';
 
 const StyledSimilarsList = styled.main`
   .SimilarsListTitleCont {
@@ -28,7 +28,7 @@ function SimilarsList() {
 
   useEffect(() => {
     dispatch(getSimilars());
-  }, []);
+  }, [dispatch]);
 
   const { problems, similars } = useSelector((state) => state);
 
@@ -40,7 +40,7 @@ function SimilarsList() {
 
       {problems.selectedId ? (
         <div>
-          <h3>문제유형을 잘 넣기</h3>
+          <h3>문제유형</h3>
 
           <Masonry
             breakpointCols={1}

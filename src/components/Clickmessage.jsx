@@ -7,19 +7,18 @@ const StyledClickmessage = styled.div`
   justify-content: center;
   width: 100%;
   min-width: 448.2px;
-  min-height: 100%;
+  min-height: 98.2%;
   background-color: #fff;
   > div {
     height: 92vh;
+    width: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid red;
     .ClickmessageBtn {
       margin-left: 0px;
       pointer: normal;
     }
     .infoText {
-      position: fixed;
       width: 100%;
       margin: 0px 130px;
       min-width: 228.8px;

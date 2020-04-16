@@ -12,11 +12,7 @@ export const ToggleButton = styled.button`
   min-height: 36px;
   border: 1px solid #e0e0e0;
   border-radius: 3px;
-  /* background: #fff; */
   cursor: pointer;
   display: inline-block;
   transition: all 0.3s ease;
-  a {
-    color: #00abff;
-  }
 `;

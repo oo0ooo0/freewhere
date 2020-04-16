@@ -1,10 +1,4 @@
-import {
-  ADD_CLICK,
-  CHANGE_CLICK,
-  LOAD_SIMILARS,
-  PROBLEM_TO_SIMILAR,
-  REMOVE_SIMILAR,
-} from './actions';
+import { LOAD_SIMILARS, PROBLEM_TO_SIMILAR, REMOVE_SIMILAR } from './actions';
 
 const initialState = { items: [] };
 

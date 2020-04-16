@@ -54,7 +54,7 @@ export const replaceProblems = (similarId) => (dispatch, getState) => {
   });
 
   items.forEach((problem) => {
-    if (problem.id == selectedId) {
+    if (problem.id === selectedId) {
       replaceSimilar = problem;
     }
   });
