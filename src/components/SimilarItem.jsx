@@ -22,8 +22,12 @@ function SimillarItem(props) {
       <div className='problemText'>
         <em className='problemType'>{props.problemType}</em>
         <p className='unitName'>{props.unitName}</p>
-        <ToggleButton onClick={handleAddProblem}>추가</ToggleButton>
-        <ToggleButton onClick={handleReplaceProblem}>교체</ToggleButton>
+        <ToggleButton className='btn' onClick={handleAddProblem}>
+          추가
+        </ToggleButton>
+        <ToggleButton className='btn' onClick={handleReplaceProblem}>
+          교체
+        </ToggleButton>
       </div>
 
       <div className='problemImg'>

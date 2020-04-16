@@ -107,27 +107,12 @@ fieldset {
 }
 
 /* btn reset  */
-button {
-  width:80px;
-  min-width:80px;
-  height:36px;
-  min-height:36px;
-  border: 1px solid #E0E0E0;
-  border-radius: 3px;
-  background: #fff;
-  cursor: pointer;
-  display: inline-block;
-  transition: all 0.3s ease; 
-  a{
-     color: #00ABFF;
-  }
-  }
 
-  button:hover {
+  button.btn:hover {
   border: 1px solid #00ABFF;  
   }
 
-  button:active {
+  button.btn:active {
     background: #00ABFF;
     border: 1px solid #E0E0E0;
     a{
@@ -187,15 +172,14 @@ components/ ProblemItem
       white-space: nowrap;
     }
     .unitName {
+      width: 700px;
+      min-width: 161.6px;
       display: inline-block;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
-    button {
-      
-      margin-left: 8px;
-    }
+    
   }
   .problemImg {
     display: flex;

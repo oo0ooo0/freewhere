@@ -13,6 +13,8 @@ const StyledProblemsList = styled.main`
   .my-masonry-grid {
     display: flex;
     width: auto;
+    min-width: 49.8%;
+    min-height: 92vh;
   }
   .my-masonry-grid_column {
     background-clip: padding-box;
