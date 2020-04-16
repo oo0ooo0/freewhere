@@ -4,16 +4,12 @@ import Clickmessage from './components/Clickmessage';
 import SimilarItem from './components/SimilarItem';
 import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getSimilars } from './services/similars/actions';
-import { useSelector } from 'react-redux';
+import { getProblems } from './services/problems/actions';
 
 const StyledSimilarsList = styled.main`
   .SimilarsListTitleCont {
-    border-bottom: 3px solid #f5f5f5;
-    z-index: 10;
-    position: absolute;
-    width: 49.8%;
   }
   h3 {
     background: #fafafa;
@@ -24,7 +20,6 @@ const StyledSimilarsList = styled.main`
     height: 36px;
   }
   .my-masonry-grid {
-    margin-top: 10px;
   }
 `;
 

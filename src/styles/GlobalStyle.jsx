@@ -212,6 +212,7 @@ components/ ProblemsList
 */
 .list{
   width: 49.8%;
+  position: relative;
 
   .my-masonry-grid {
     display: flex;
