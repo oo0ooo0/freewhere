@@ -1,6 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## 2020-frontend-homework. 2020-4
+## 2020-04frontend-homework.
 
 ### 이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)으로 제작되었습니다.
 
@@ -11,4 +9,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [axios](https://github.com/axios/axios),
 [redux-thunk](https://github.com/reduxjs/redux-thunk)를 사용하였습니다.
 
-### [zeit](https://zeit.co/) 도매인을 사용하여 푸쉬하면 자동으로 https://icd-lovat.now.sh/ 로 배포됩니다.
+### localhost로 http 통신을 위해 별도 도메인을 지정하지 않았습니다.
+
+### 작업중
+
+- 각 리스트의 리스트넘버
+- 유사유형리스트 상단의 unitName
+- 최적화
