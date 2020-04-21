@@ -4,7 +4,7 @@ function requestProblems() {
   return axios.get(`http://localhost:3000/fe-problems.json`);
 }
 
-export const SIMILLAR_CLICK = 'SIMILLAR_CLICK';
+export const SIMILAR_CLICK = 'SIMILAR_CLICK';
 export const DELETE_CLICK = 'DELETE_CLICK';
 export const LOAD_PROBLEMS = 'LOAD_PROBLEMS';
 export const LOAD_FAILURE = 'LOAD_FAILURE';
