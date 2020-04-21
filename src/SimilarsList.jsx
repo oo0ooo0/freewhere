@@ -6,6 +6,7 @@ import Masonry from 'react-masonry-css';
 import { TitleContainer } from './components/Containers';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSimilars } from './services/similars/actions';
+import { getProblems } from './services/problems/actions';
 // import { getProblems } from './services/problems/actions';
 
 const StyledSimilarsList = styled.main`
@@ -29,8 +30,12 @@ function SimilarsList() {
   useEffect(() => {
     dispatch(getSimilars());
   }, [dispatch]);
+  useEffect(() => {
+    dispatch(getProblems());
+  }, [dispatch]);
 
   const { problems, similars } = useSelector((state) => state);
+  const { items, selectedId } = useSelector((state) => state.problems);
 
   return (
     <StyledSimilarsList className='list'>
@@ -40,15 +45,19 @@ function SimilarsList() {
 
       {problems.selectedId ? (
         <div>
-          <h3>문제유형</h3>
+          {items
+            .filter((item) => item.id === selectedId)
+            .map((item) => (
+              <h3 key={item.id}>{item.unitName}</h3>
+            ))}
 
           <Masonry
             breakpointCols={1}
             className='my-masonry-grid'
             columnClassName='my-masonry-grid_column'
           >
-            {similars.items.map((similar) => {
-              return <SimilarItem key={similar.id} {...similar} />;
+            {similars.items.map((similar, index) => {
+              return <SimilarItem key={similar.id} {...similar} order={index + 1} />;
             })}
           </Masonry>
         </div>

@@ -41,8 +41,14 @@ function ProblemsList() {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        {items.map((item) => (
-          <ProblemItem {...item} key={item.id} isSelected={selectedId === parseInt(item.id, 10)} />
+        {items.map((item, index) => (
+          //<ProblemItem {...item} key={item.id} isSelected={selectedId === parseInt(item.id, 10)} /> //parseInt 넘버타입으로 바꿔주는거 // 10진수
+          <ProblemItem
+            order={index + 1}
+            {...item}
+            key={item.id}
+            isSelected={selectedId === item.id}
+          />
         ))}
       </Masonry>
     </StyledProblemsList>

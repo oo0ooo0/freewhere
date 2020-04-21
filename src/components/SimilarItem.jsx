@@ -16,7 +16,6 @@ function SimillarItem(props) {
   const handleReplaceProblem = () => {
     dispatch(replaceProblems(props.id));
   };
-
   return (
     <StyledSimillarItem className='item'>
       <div className='problemText'>
@@ -31,7 +30,7 @@ function SimillarItem(props) {
       </div>
 
       <div className='problemImg'>
-        <b>1</b>
+        <b>{props.order}</b>
         <img className='probleImg' src={props.problemURL} alt='문제 이미지'></img>
       </div>
     </StyledSimillarItem>
